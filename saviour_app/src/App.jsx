@@ -1,4 +1,3 @@
-import './App.css'
 import { Details } from './components/Details'
 import { Events } from './components/Events'
 import { FaqAndLogo } from './components/FaqAndLogo'
