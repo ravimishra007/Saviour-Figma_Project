@@ -1,11 +1,11 @@
 import { Details } from './components/Details'
 import { Events } from './components/Events'
-import { FaqAndLogo } from './components/FaqAndLogo'
+import { FAQ } from './components/FaqAndLogo'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { RoadMap } from './components/RoadMap'
+import { TokenOmics } from './components/TokenNomics'
 
-import { TokenNomics } from "./components/TokenNomics"
 
 function App() {
   
@@ -16,9 +16,9 @@ function App() {
        <Header/>
         <Details/>
         <Events/>
-     <TokenNomics/>
+     <TokenOmics/>
      <RoadMap/>
-     <FaqAndLogo/>
+     <FAQ/>
      <Footer/>
     </div>
     </>

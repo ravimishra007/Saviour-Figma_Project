@@ -1,39 +1,61 @@
-
-import { useState, useEffect } from "react";
-import { Card } from "./Card";
-// import "../App.css"; // Assuming your CSS file is named RoadMap.css
+import { useEffect } from 'react';
+import '../styles/Roadmap.css';
 
 const RoadMap = () => {
-  const [animateTitle, setAnimateTitle] = useState(false);
-  const [animateCards, setAnimateCards] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
-      if (!animateTitle && window.scrollY > 100) {
-        setAnimateTitle(true);
-      }
-      if (!animateCards && window.scrollY > 300) {
-        setAnimateCards(true);
-      }
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        const top = card.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (top < windowHeight * 0.75) {
+          card.classList.add('animate');
+        } else {
+          card.classList.remove('animate');
+        }
+      });
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [animateTitle, animateCards]);
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <div className="lg:w-[1512px] lg:h-[716px] text-[#FFFFFF] bg-cover bg-[url('../../img/Rectangle21.png')]">
-      <div className={`w-[282px] h-[52px] relative top-[16px] left-[613px] font-shojumaru text-[44px] font-normal leading-[52.36px] text-[#ED0137] ${animateTitle ? 'fade-in' : ''}`}>
-        Road Map
-      </div>
-      <div className="lg:w-[1159.1px] lg:h-[349px] relative top-[227px] left-[164px] flex justify-between">
-        <Card image="../../img/Link1.png" animate={animateCards} />
-        <Card image="../../img/Link2.png" animate={animateCards} />
-        <Card image="../../img/Link3.png" animate={animateCards} />
-        <Card image="../../img/Link.png" animate={animateCards} />
+    <div className="roadmap">
+      <h1 className='text-[44px] font-herofont text-[#ED0137] text-center p-[64px]'>ROAD MAP</h1>
+      <div className='flex flex-wrap justify-center items-center gap-[70px]'>
+        <div className="card">
+          <div className="bg-[url('./assets/savior_card_1.png')] h-[349px] w-[237px] bg-cover border-2 border-red-800 rounded-2xl">
+            <h1 className='text-white mt-[200px] ml-[23px] font-semibold font-connectwallet'>Phase 1</h1>
+            <p className='text-gray-400 ml-[23px] mt-[13px] font-connectwallet'>Technical Readiness <br /> and Smart Contract <br /> Audit</p>
+          </div>
+        </div>
+        <div className="card">
+          <div className="bg-[url('./assets/savior_card_2.png')] h-[349px] w-[237px] bg-cover border-2 border-red-800 rounded-2xl">
+            <h1 className='text-white mt-[227px] ml-[23px] font-semibold font-connectwallet'>Phase 2</h1>
+            <p className='text-gray-400 ml-[23px] mt-[13px] font-connectwallet'>Increase Liquidity and Trading Volume</p>
+          </div>
+        </div>
+        <div className="card">
+          <div className="bg-[url('./assets/savior_card_3.png')] h-[349px] w-[237px] bg-cover border-2 border-red-800 rounded-2xl">
+            <h1 className='text-white mt-[227px] ml-[23px] font-semibold font-connectwallet'>Phase 3</h1>
+            <p className='text-gray-400 ml-[23px] mt-[13px] font-connectwallet'>Community Building and Marketing</p>
+          </div>
+        </div>
+        <div className="card">
+          <div className="bg-[url('./assets/savior_card_4.png')] h-[349px] w-[237px] bg-cover border-2 border-red-800 rounded-2xl">
+            <h1 className='text-white mt-[227px] ml-[23px] font-semibold font-connectwallet'>Phase 4</h1>
+            <p className='text-gray-400 ml-[23px] mt-[13px] font-connectwallet'>Ecosystem Expansion and Partnerships</p>
+          </div>
+        </div>
       </div>
     </div>
   );
-};
+}
 
 export { RoadMap };

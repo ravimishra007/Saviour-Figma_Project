@@ -29,7 +29,11 @@ export const Details = () => {
           <button>Documents <FontAwesomeIcon icon={faAngleDown} style={{ marginLeft: '5px' }}/></button>
         </div>
         <div className="details-img">
-          <img src={saviour} alt="saviour details" />
+          <img  className="inline-block ml-[11px] transition-transform transform-gpu hover:scale-110" 
+          src={saviour} alt="saviour details"
+
+          />
+
         </div>
       </div>
     </>

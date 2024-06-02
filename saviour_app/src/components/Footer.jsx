@@ -1,48 +1,39 @@
+import logo from '../assets/savior-logo.png';
+import twitter from '../assets/twitter-icon.png';
+import telegram from '../assets/telegram-icon.png';
+import mail from '../assets/mail-icon.png';
+import '../styles/Footer.css';
 
-import { useState, useEffect } from 'react';
-import frame1 from '../../images/Frame1825.png'
-// import '../styles/Footer.css'; 
 const Footer = () => {
-  const [animate, setAnimate] = useState(false);
-
-  useEffect(() => {
-    const fadeInOnScroll = () => {
-      // Determine when to trigger the animation
-      const footerElement = document.querySelector('.footer-container');
-      if (footerElement) {
-        const topOffset = footerElement.getBoundingClientRect().top;
-        const scrollTrigger = window.innerHeight * 0.7; // Adjust as needed
-
-        if (topOffset < scrollTrigger) {
-          setAnimate(true);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', fadeInOnScroll);
-    fadeInOnScroll(); 
-
-    return () => window.removeEventListener('scroll', fadeInOnScroll);
-  }, []);
-
   return (
-    <div className={`w-[1512px] h-[428px] flex flex-col justify-center items-center footer-container ${animate ? 'fade-in' : ''}`}>
-      <img src="../../images/LogoSavior.png" alt="" />
-      <p className='bg-gradient-to-r from-gradient-start to-gradient-end bg-clip-text text-transparent font-bold text-3xl font-poppins leading-[25.64px] mt-[30px] tracking-[1.7090909481048584px] text-left'>SITEMAP</p>
-      <div className='w-[618px] h-[20px] flex justify-between text-[#FFFFFF] mt-[30px]'>
-        <p>Home</p>
-        <p>IDO</p>
-        <p>Tokenomics</p> 
-        <p>Roadmap</p>
-        <p>Whitepaper</p>
-        <p>Pledge</p>
-        <p>NFT</p>
-        <p>Games</p>
+    <div className='h-[428px] bg-gradient-to-b from-[#030405] to-[#120101] flex flex-col items-center'>
+      <div className='flex flex-col items-center w-[80%] lg:w-[200px] h-[221px] mt-[50px] lg:mt-[0]'>
+        <img src={logo} className='w-[150px] h-[150px]' />
+        <h1 className='font-selectwallet text-center font-bold text-[24px] mt-[-15px] gradient-text'>
+          SITE MAP
+        </h1>
       </div>
-      <div className='w-[111px] h-[27px]'></div>
-      <img className="ml-[200px]" src={frame1} alt="" />
+
+      <div className='mt-[20px] lg:mt-[30px]'>
+        <ul className='flex flex-wrap justify-center lg:justify-start space-x-4 lg:space-x-8 text-white text-[13px] font-semibold font-selectwallet'>
+          <li>Home</li>
+          <li>IDO</li>
+          <li>Tokenomics</li>
+          <li>Road Map</li>
+          <li>Whitepaper</li>
+          <li>Pledge</li>
+          <li>NFT</li>
+          <li>Games</li>
+        </ul>
+      </div>
+
+      <div className='flex justify-center items-center gap-6 mt-[30px] lg:mt-[50px]'>
+        <img src={twitter} alt='Twitter' className='w-[23px] h-[19px]' />
+        <img src={telegram} alt='Telegram' className='w-[23px] h-[19px]' />
+        <img src={mail} alt='Mail' className='w-[23px] h-[19px]' />
+      </div>
     </div>
   );
-};
+}
 
 export { Footer };
