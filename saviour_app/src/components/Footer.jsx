@@ -1,39 +1,84 @@
-import logo from '../assets/savior-logo.png';
-import twitter from '../assets/twitter-icon.png';
-import telegram from '../assets/telegram-icon.png';
-import mail from '../assets/mail-icon.png';
-import '../styles/Footer.css';
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 
+import { FaTelegramPlane, FaTwitter } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
+import FooterLogo from "../assets/logo.png";
 const Footer = () => {
+  const footerItems = [
+    "Home",
+    "IDO",
+    "Tokenomics",
+    "Road Map",
+    "Whitepaper",
+    "Pledge",
+    "NFT",
+    "Games",
+  ];
   return (
-    <div className='h-[428px] bg-gradient-to-b from-[#030405] to-[#120101] flex flex-col items-center'>
-      <div className='flex flex-col items-center w-[80%] lg:w-[200px] h-[221px] mt-[50px] lg:mt-[0]'>
-        <img src={logo} className='w-[150px] h-[150px]' />
-        <h1 className='font-selectwallet text-center font-bold text-[24px] mt-[-15px] gradient-text'>
-          SITE MAP
-        </h1>
-      </div>
-
-      <div className='mt-[20px] lg:mt-[30px]'>
-        <ul className='flex flex-wrap justify-center lg:justify-start space-x-4 lg:space-x-8 text-white text-[13px] font-semibold font-selectwallet'>
-          <li>Home</li>
-          <li>IDO</li>
-          <li>Tokenomics</li>
-          <li>Road Map</li>
-          <li>Whitepaper</li>
-          <li>Pledge</li>
-          <li>NFT</li>
-          <li>Games</li>
-        </ul>
-      </div>
-
-      <div className='flex justify-center items-center gap-6 mt-[30px] lg:mt-[50px]'>
-        <img src={twitter} alt='Twitter' className='w-[23px] h-[19px]' />
-        <img src={telegram} alt='Telegram' className='w-[23px] h-[19px]' />
-        <img src={mail} alt='Mail' className='w-[23px] h-[19px]' />
-      </div>
-    </div>
+    <Box
+      bg="linear-gradient(180deg, #030405 0%, #120101 100%)"
+      h={{ base: "448px", md: "428px" }}
+      w="100%"
+      boxSizing="border-box"
+      paddingTop={"64px"}
+      paddingBottom={{ base: "26px", md: "39px" }}
+    >
+      <Flex
+        flexDirection={"column"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        h="100%"
+      >
+        <Image
+          src={FooterLogo}
+          boxSize="163px"
+          objectFit="cover"
+          alt="Saviour"
+          objectPosition={"60% -15%"}
+        />
+        <Text
+          fontFamily={"Poppins"}
+          fontSize={"24px"}
+          fontWeight={700}
+          background="linear-gradient(92.23deg, #FF002A 5.2%, #720005 90.93%)"
+          bgClip="text"
+        >
+          SITEMAP
+        </Text>
+        <Flex
+          columnGap={"32px"}
+          rowGap={"16px"}
+          h="20px"
+          alignItems={"center"}
+          justifyContent={"center"}
+          flexWrap={"wrap"}
+        >
+          {footerItems.map((item, index) => (
+            <Text
+              key={index}
+              fontSize="14px"
+              fontWeight={600}
+              fontFamily="Poppins"
+              color="white"
+            >
+              {item}
+            </Text>
+          ))}
+        </Flex>
+        <Flex
+          color={"#ED0137"}
+          w={"111px"}
+          h={"27px"}
+          justifyContent={"space-between"}
+          mt={{ base: "34px", md: "10px" }}
+        >
+          <FaTwitter />
+          <FaTelegramPlane />
+          <IoMdMail />
+        </Flex>
+      </Flex>
+    </Box>
   );
-}
+};
 
 export { Footer };

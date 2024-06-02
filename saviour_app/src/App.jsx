@@ -1,28 +1,26 @@
-import { Details } from './components/Details'
-import { Events } from './components/Events'
-import { FAQ } from './components/FaqAndLogo'
-import { Footer } from './components/Footer'
-import { Header } from './components/Header'
-import { RoadMap } from './components/RoadMap'
-import { TokenOmics } from './components/TokenNomics'
-
+import { Box } from "@chakra-ui/react";
+import "./App.css";
+import { Event } from "./components/Event";
+import { FAQ } from "./components/FAQ";
+import { Footer } from "./components/Footer";
+import { HeroBanner } from "./components/HeroBanner";
+import { Introduction } from "./components/Introduction";
+import { RoadMapSection } from "./components/RoadMapSection";
+import { Tokenomics } from "./components/Tokenomics";
 
 function App() {
-  
-
   return (
-    <>
-    <div className="w-[1512px] h-auto bg-[#0a0a0a] ">
-       <Header/>
-        <Details/>
-        <Events/>
-     <TokenOmics/>
-     <RoadMap/>
-     <FAQ/>
-     <Footer/>
-    </div>
-    </>
-  )
+
+    <Box>
+      <HeroBanner />
+      <Introduction />
+      <Event />
+      <Tokenomics />
+      <RoadMapSection />
+      <FAQ />
+      <Footer />
+    </Box>
+  );
 }
 
-export default App
+export default App;
