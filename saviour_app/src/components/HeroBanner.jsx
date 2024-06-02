@@ -7,7 +7,7 @@ const HeroBanner = () => {
   return (
     <Box
       m={"0 auto"}
-      height={{ base: "fit-content", md: "888px" }}
+      height={{ base: "fit-content", md: "600px" }}
       width={"100%"}
       backgroundImage={hero}
       backgroundPosition={{ base: "50% 35%", md: "0 35%" }}
