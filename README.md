@@ -1,4 +1,3 @@
-
 <h1>Saviour-Figma_Project</h1>
 
 <h2>Deplolyed App: </h2>  https://saviour-figma-project.vercel.app/
@@ -54,6 +53,3 @@ npm install
 ```bash
 npm run dev
 ```
-
-
-
