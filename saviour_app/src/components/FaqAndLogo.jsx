@@ -8,7 +8,7 @@ export const FaqAndLogo = () => {
         </div> 
    <div className='flex justify-evenly '>
    {/* mt-[109px] ml-[87px] */}
-    <img className='w-[503px] h-[503px]' src="../../images/image1.png" alt="" />
+    <img className='w-[503px] h-[503px]' src="../../img/image1.png" alt="" />
     <FAQ/>
    </div>
     </div>

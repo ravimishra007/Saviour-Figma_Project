@@ -10,7 +10,7 @@ const TokenNomics = () => {
   }, []);
 
   return (
-    <div className={`lg:w-[1512px] lg:h-[706px] sm:w-[353px]  sm:h-[800px] bg-[#0a0a0a] bg-cover bg-[url('../../images/Rectangle20.png')] ${mounted ? 'fade-in' : ''}`}>
+    <div className={`lg:w-[1512px] lg:h-[706px] sm:w-[353px]  sm:h-[800px] bg-[#0a0a0a] bg-cover bg-[url('../../img/Rectangle20.png')] ${mounted ? 'fade-in' : ''}`}>
       <div className="lg:w-[330px] lg:h-[52px] sm:w-[353px] border border-solid border-black">
         <p className={`lg:w-[330px] lg:h-[52px] sm:w-[353px] mt-16 ml-[592px] font-shojumaru text-[44px] font-normal leading-[52.36px] text-[#ED0137] ${mounted ? 'slide-in' : ''}`}>
           Tokenomics
@@ -36,7 +36,7 @@ const TokenNomics = () => {
         </div>
       </div>
 
-      <img className="lg:w-[943px] lg:h-[350px] sm:w-[400px] sm:h-[250px] absolute lg:left-[530px] lg:top-[2500px] sm:left-[590px] sm:top-[540px]" src="../../images/Frame1824.png" alt="" />
+      <img className="lg:w-[943px] lg:h-[350px] sm:w-[400px] sm:h-[250px] absolute lg:left-[530px] lg:top-[2500px] sm:left-[590px] sm:top-[540px]" src="../../img/Frame1824.png" alt="" />
     </div>
   );
 };
