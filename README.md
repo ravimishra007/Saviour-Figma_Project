@@ -6,6 +6,13 @@ This repository contains the implementation of a web application based on a prov
 
 ## Deplolyed App: 
 
+Technologies Used
+1. HTML
+2. CSS
+3. JavaScript
+4. React.js
+5. tailwind
+
 
 ## Features
 
